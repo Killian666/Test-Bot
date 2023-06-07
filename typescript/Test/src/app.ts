@@ -35,12 +35,12 @@ app.use((req, res, next) => {
 });
 
 const manifest = {
-    app_id: 'node-example',
+    app_id: 'Le-Bot-De-Test',
     display_name: "Test",
     description: "Example TypeScript app for Mattermost",
     homepage_url: 'https://github.com/Killian666/Test-Bot/tree/main/typescript/Test',
     app_type: 'http',
-    icon: 'icon.png',
+    icon: 'test.png',
     http: {
         root_url: `http://${host}:${port}`,
     },
@@ -55,7 +55,7 @@ const manifest = {
 
 const form: AppForm = {
     title: "Je suis le test",
-    icon: 'icon.png',
+    icon: 'test.png',
     fields: [
         {
             type: 'text',
@@ -78,7 +78,7 @@ const channelHeaderBindings = {
     bindings: [
         {
             location: 'send-button',
-            icon: 'icon.png',
+            icon: 'test.png',
             label: 'send hello message',
             form,
         },
@@ -89,8 +89,8 @@ const commandBindings = {
     location: '/command',
     bindings: [
         {
-            icon: 'icon.png',
-            label: 'node-example',
+            icon: 'test.png',
+            label: 'Le-Bot-De-Test',
             description: manifest.description,
             hint: '[Test]',
             bindings: [
