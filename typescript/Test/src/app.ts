@@ -38,7 +38,7 @@ const manifest = {
     app_id: 'node-example',
     display_name: "Test",
     description: "Example TypeScript app for Mattermost",
-    homepage_url: 'https://github.com/Killian666/Test-Bot',
+    homepage_url: 'https://github.com/Killian666/Test-Bot/tree/main/typescript/Test',
     app_type: 'http',
     icon: 'icon.png',
     http: {
@@ -54,7 +54,7 @@ const manifest = {
 } as AppManifest;
 
 const form: AppForm = {
-    title: "I'm a form!",
+    title: "Je suis le test",
     icon: 'icon.png',
     fields: [
         {
