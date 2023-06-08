@@ -1,5 +1,5 @@
 {
-  "name": "mattermost-apps-typescript-hello-world",
+  "name": "mattermost-apps-typescript-test",
   "version": "1.0.0",
   "description": "Example TypeScript app for Mattermost",
   "scripts": {
