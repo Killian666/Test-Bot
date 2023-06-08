@@ -97,7 +97,7 @@ const commandBindings = {
                 {
                     location: 'Test',
                     label: 'Test',
-                    form,
+                    form,//indispenssable car sinon pas d'affichage
                 },
             ],
         },
@@ -136,10 +136,10 @@ app.post('/submit', async (req, res) => {
 
     const formValues = call.values as FormValues;
 
-    let message = 'Je suis le bot de Test ==>';
+    let message = '';
     const submittedMessage = formValues.message;
     if (submittedMessage) {
-        message += ' ...and ' + submittedMessage + '!';
+        
     }
 
     const users = [
