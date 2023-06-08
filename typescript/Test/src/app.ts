@@ -33,7 +33,7 @@ app.use((req, res, next) => {
 
     next();
 });
-
+// Les moyens de log et le nom du bot
 const manifest = {
     app_id: 'Essaie',
     display_name: "Essaie",
@@ -52,7 +52,7 @@ const manifest = {
         '/command',
     ],
 } as AppManifest;
-
+//l'interface d'envoie de message au utilisateur (appuyer sur le logo a droite dans la barre)
 const form: AppForm = {
     title: "Je suis le test",
     icon: 'test.png',
@@ -90,7 +90,7 @@ const commandBindings = {
     bindings: [
         {
             icon: 'test.png',
-            label: 'Le-Bot-De-Test',
+            label: 'essaie',
             description: manifest.description,
             hint: '[Test]',
             bindings: [
