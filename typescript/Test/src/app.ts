@@ -95,7 +95,6 @@ const commandBindings = {
             hint: '[Test]',
             bindings: [
                 {
-                    location: 'Test',
                     label: 'Test',
                     form,
                 },
