@@ -35,7 +35,7 @@ app.use((req, res, next) => {
 });
 
 const manifest = {
-    app_id: 'Le-Bot-De-Test',
+    app_id: 'Test',
     display_name: "Test",
     description: "Example TypeScript app for Mattermost",
     homepage_url: 'https://github.com/Killian666/Test-Bot/tree/main/typescript/Test',
@@ -136,7 +136,7 @@ app.post('/submit', async (req, res) => {
 
     const formValues = call.values as FormValues;
 
-    let message = 'Hello, world!';
+    let message = 'Je suis le bot de Test ==>';
     const submittedMessage = formValues.message;
     if (submittedMessage) {
         message += ' ...and ' + submittedMessage + '!';
