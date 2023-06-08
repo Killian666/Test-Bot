@@ -140,7 +140,7 @@ app.post('/submit', async (req, res) => {
     const submittedMessage = formValues.message;
     if (submittedMessage) {
         message //+= ' ...and ' + 
-        submittedMessage//+ '!';
+        + submittedMessage//+ '!';
     }
 
     const users = [
