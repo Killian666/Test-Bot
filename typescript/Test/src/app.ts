@@ -79,7 +79,7 @@ const channelHeaderBindings = {
         {
             location: 'send-button',
             icon: 'test.png',
-            label: 'send hello message',
+            label: 'Envoie un message avec le Test',
             form,
         },
     ],
