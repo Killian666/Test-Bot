@@ -96,7 +96,8 @@ const commandBindings = {
             bindings: [
                 {
                     location: 'Test',
-                    label: 'Test'
+                    label: 'Test',
+                    form,
                 },
             ],
         },
