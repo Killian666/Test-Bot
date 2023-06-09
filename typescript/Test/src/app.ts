@@ -1,9 +1,9 @@
-// Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
-// See LICENSE.txt for license information.
+// Copyright (c) 2015-présent Mattermost, Inc. Tous droits réservés.
+// Voir LICENSE.txt pour les informations de licence.
 
 import express from 'express';
 
-// Shim for mattermost-redux global fetch access
+// Shim pour l'accès à la récupération globale mattermost-redux
 global.fetch = require('node-fetch');
 
 import {AppBinding, AppCallRequest, AppCallResponse, AppForm, AppManifest} from '@mattermost/types/lib/apps';
@@ -18,16 +18,14 @@ const port = process.env.APP_PORT || 5000;
 const app = express();
 app.use(express.json());
 
-// Uncomment these lines to enable verbose debugging of requests and responses
-// import logger from './middleware/logger';
-// app.use(logger);
+// Décommentez ces lignes pour activer le débogage détaillé des requêtes et des réponses
+// importe l'enregistreur depuis './middleware/logger' ;
+// app.use(enregistreur);
 
 app.use((req, res, next) => {
     const call: AppCallRequest = req.body;
-
-    // This is used to interact with the Mattermost server in the docker-compose dev environment.
-    // We ignore the site URL sent in call requests, and instead use the known site URL from the environment variable.
-    if (call?.context?.mattermost_site_url && process.env.MATTERMOST_SITEURL) {
+// Ceci est utilisé pour interagir avec le serveur Mattermost dans l'environnement de développement docker-compose.
+// Nous ignorons l'URL du site envoyée dans les demandes d'appel et utilisons à la place l'URL du site connue de la variable d'environnement.    if (call?.context?.mattermost_site_url && process.env.MATTERMOST_SITEURL) {
         call.context.mattermost_site_url = process.env.MATTERMOST_SITEURL;
     }
 
@@ -36,7 +34,7 @@ app.use((req, res, next) => {
 // Les moyens de log et le nom du bot
 const manifest = {
     app_id: 'Essaie',
-    display_name: "Essaie",
+    display_name: "Test",
     description: "Example TypeScript app for Mattermost",
     homepage_url: 'https://github.com/Killian666/Test-Bot/tree/main/typescript/Test',
     app_type: 'http',
@@ -97,7 +95,7 @@ const commandBindings = {
                 {
                     location: 'Test',
                     label: 'Test',
-                    form,//indispenssable car sinon pas d'affichage
+                    form,
                 },
             ],
         },
@@ -135,11 +133,11 @@ app.post('/submit', async (req, res) => {
     botClient.setToken(call.context.bot_access_token);
 
     const formValues = call.values as FormValues;
-    //Message automatique -- le If permet de mettre un suite contextuelle (genre signature)
-    let message = ' ';
+//Message automatique -- le If permet de mettre un suite contextuelle (genre signature)
+    let message = 'Je suis le bot de Test ==>';
     const submittedMessage = formValues.message;
     if (submittedMessage) {
-        submittedMessage;
+        message += ' ...and ' + submittedMessage + '!';
     }
 
     const users = [
