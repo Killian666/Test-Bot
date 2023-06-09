@@ -138,7 +138,7 @@ app.post('/submit', async (req, res) => {
     let message = 'Je suis le bot de Test ==>';
     const submittedMessage = formValues.message;
     if (submittedMessage) {
-        submittedMessage
+        message
     }
 
     const users = [
