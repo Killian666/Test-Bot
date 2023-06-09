@@ -24,13 +24,14 @@ app.use(express.json());
 
 app.use((req, res, next) => {
     const call: AppCallRequest = req.body;
-// Ceci est utilisé pour interagir avec le serveur Mattermost dans l'environnement de développement docker-compose.
-// Nous ignorons l'URL du site envoyée dans les demandes d'appel et utilisons à la place l'URL du site connue de la variable d'environnement.    if (call?.context?.mattermost_site_url && process.env.MATTERMOST_SITEURL) {
-        call.context.mattermost_site_url = process.env.MATTERMOST_SITEURL;
-    }
-
-    next();
-});
+    // Ceci est utilisé pour interagir avec le serveur Mattermost dans l'environnement de développement docker-compose.
+    // Nous ignorons l'URL du site envoyée dans les demandes d'appel et utilisons à la place l'URL du site connue de la variable d'environnement.    if (call?.context?.mattermost_site_url && process.env.MATTERMOST_SITEURL) {
+        if (call?.context?.mattermost_site_url && process.env.MATTERMOST_SITEURL) {
+            call.context.mattermost_site_url = process.env.MATTERMOST_SITEURL;
+        }
+    
+        next();
+    });
 // Les moyens de log et le nom du bot
 const manifest = {
     app_id: 'Essaie',
@@ -90,7 +91,7 @@ const commandBindings = {
             icon: 'test.png',
             label: 'essaie',
             description: manifest.description,
-            hint: '[Test]',
+            hint: '[Test]', 
             bindings: [
                 {
                     location: 'Test',
@@ -137,7 +138,7 @@ app.post('/submit', async (req, res) => {
     let message = 'Je suis le bot de Test ==>';
     const submittedMessage = formValues.message;
     if (submittedMessage) {
-        message += ' ...and ' + submittedMessage + '!';
+        submittedMessage
     }
 
     const users = [
