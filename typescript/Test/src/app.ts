@@ -91,7 +91,7 @@ const commandBindings = {
             icon: 'test.png',
             label: 'essaie',
             description: manifest.description,
-            hint: '[Test]', 
+            hint: '[Test]',
             bindings: [
                 {
                     location: 'Test',
@@ -102,6 +102,25 @@ const commandBindings = {
         },
     ],
 } as AppBinding;
+
+const CommandePerso: CommandePerso = void{
+    location: '/command',
+    bindings: [
+        {
+            icon: 'test.png',
+            label: 'tableau',
+            description: manifest.description,
+            hint:'[Test]',const:' [Test]',
+            bindings: [
+                {
+                    location: 'Test',
+                    label: 'Test',
+                    form,
+                },
+            ],
+        },
+    ],
+};
 
 // Serve resources from the static folder
 app.use('/static', express.static('./static'));
@@ -138,7 +157,7 @@ app.post('/submit', async (req, res) => {
     let message = 'Je suis le bot de Test ==>';
     const submittedMessage = formValues.message;
     if (submittedMessage) {
-        message
+        message += ' ...and ' + submittedMessage + '!';
     }
 
     const users = [
