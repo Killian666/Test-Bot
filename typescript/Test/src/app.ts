@@ -113,14 +113,14 @@ const commandBindings1 = {
             hint: '[joueur1]'+'[joueur2]',
             bindings: [
                 {
-                    locatio: 'joueur1',
-                    labe: 'joueur1',
+                    location: 'joueur1'+'joueur2',
+                    label: 'joueur1'+'joueur2',
                     form,
                 },
             ],
         },
     ],
-} as unknown as AppBinding;
+} as AppBinding;
 
 // Serve resources from the static folder
 app.use('/static', express.static('./static'));
@@ -161,7 +161,7 @@ app.post('/submit', async (req, res) => {
     let message = 'Saisir le nom du joueur1:';
     const submittedMessage = formValues.message;
     if (submittedMessage) {
-        message += submittedMessage +' joueur2: ';
+        message += submittedMessage +' joueur2:';
     }
 
     const users = [
