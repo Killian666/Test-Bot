@@ -84,7 +84,7 @@ const channelHeaderBindings = {
     ],
 } as AppBinding;
 
-/*const commandBindings = {
+const commandBindings = {
     location: '/command',
     bindings: [
         {
@@ -102,8 +102,8 @@ const channelHeaderBindings = {
         },
     ],
 } as AppBinding;
-*/
-const commandBindings = {
+
+const commandBindings1 = {
     location: '/command',
     bindings: [
         {
@@ -134,6 +134,7 @@ app.post('/bindings', (req, res) => {
         data: [
             channelHeaderBindings,
             commandBindings,
+            commandBindings1,
         ],
     };
 
