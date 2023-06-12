@@ -108,7 +108,7 @@ const commandBindings1 = {
     bindingsJ1: [
         {
             icon: 'test.png',
-            label: 'joueur',
+            label: 'joueur1',
             description: manifest.description,
             hint: '[joueur1]' + '[joueur2]',
             bindings: [
@@ -122,7 +122,7 @@ const commandBindings1 = {
     ], bindingsJ2: [
         {
             icon: 'test.png',
-            label: 'joueur',
+            label: 'joueur2',
             description: manifest.description,
             hint:'[joueur2]',
             bindings: [
