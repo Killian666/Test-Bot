@@ -103,25 +103,24 @@ const commandBindings = {
     ],
 } as AppBinding;
 
-/*const CommandePerso: CommandePerso = void{
+const commandBindings1 = {
     location: '/command',
     bindings: [
         {
             icon: 'test.png',
-            label: 'tableau',
+            label: 'exemple',
             description: manifest.description,
-            hint:'[Test]',const:' [Test1]',
+            hint: '[exemple]',
             bindings: [
                 {
-                    location: 'Test',
-                    label: 'Test',
+                    location: 'Test1',
+                    label: 'Test1',
                     form,
                 },
             ],
         },
     ],
-};*/
-
+} as AppBinding;
 // Serve resources from the static folder
 app.use('/static', express.static('./static'));
 
