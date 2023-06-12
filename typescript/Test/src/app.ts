@@ -152,17 +152,18 @@ type FormValues = {
 app.post('/submit', async (req, res) => {
     console.log('req:', req);
     const call = req.body as AppCallRequest;
+    const call2 = req.body as AppCallRequest;
 
     const botClient = new Client4();
     botClient.setUrl(call.context.mattermost_site_url);
-    botClient.setToken(call.context.bot_access_token);
+    botClient.setToken(call2.context.bot_access_token);
 
     const formValues = call.values as FormValues;
-    const formValues2 = call.values as FormValues;
+    const formValues2 = call2.values as FormValues;
     console.log('valeurs formValues:', formValues);
     console.log('valeurs formValues:', formValues2);
 //Message automatique -- le If permet de mettre un suite contextuelle (genre signature)
-    let message = 'Je suis le bot de Test ==>';
+    let message = 'Saisir les champs que les joueurs suivants: ';
     const submittedMessage = formValues.message;
     const submittedMessage2 = formValues2.message;
     if (submittedMessage && submittedMessage2) {
