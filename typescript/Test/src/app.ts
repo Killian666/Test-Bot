@@ -111,19 +111,16 @@ const commandBindings1 = {
             label: 'joueur',
             description: manifest.description,
             hint: '[joueur1]',
-            hint2:'[joueur2]',
             bindings: [
                 {
                     location: 'joueur1',
                     label: 'joueur1',
-                    location2: 'joueur2',
-                    label2: 'joueur2',
                     form,
                 },
             ],
         },
     ],
-} as unknown as AppBinding;
+} as AppBinding;
 
 // Serve resources from the static folder
 app.use('/static', express.static('./static'));
@@ -145,18 +142,6 @@ app.post('/bindings', (req, res) => {
 
     res.json(callResponse);
 });
-app.post('/bindings', (req, res) => {
-    const callResponse2: AppCallResponse<AppBinding[]> = {
-        type: 'ok',
-        data: [
-            channelHeaderBindings,
-            commandBindings,
-            commandBindings1,
-        ],
-    };
-
-    res.json(callResponse2);
-});
 
 type FormValues = {
     message: string;
@@ -165,22 +150,18 @@ type FormValues = {
 app.post('/submit', async (req, res) => {
     console.log('req:', req);
     const call = req.body as AppCallRequest;
-    const call2 = req.body as AppCallRequest;
 
     const botClient = new Client4();
     botClient.setUrl(call.context.mattermost_site_url);
-    botClient.setToken(call2.context.bot_access_token);
+    botClient.setToken(call.context.bot_access_token);
 
     const formValues = call.values as FormValues;
-    const formValues2 = call2.values as FormValues;
     console.log('valeurs formValues:', formValues);
-    console.log('valeurs formValues:', formValues2);
 //Message automatique -- le If permet de mettre un suite contextuelle (genre signature)
-    let message = 'Saisir les champs que les joueurs suivants: ';
+    let message = 'Je suis le bot de Test ==>';
     const submittedMessage = formValues.message;
-    const submittedMessage2 = formValues2.message;
-    if (submittedMessage /*|| submittedMessage2*/) {
-        'Joueur1: '+submittedMessage//+' Joueur2:'+submittedMessage2;
+    if (submittedMessage) {
+        message += submittedMessage;
     }
 
     const users = [
