@@ -110,17 +110,19 @@ const commandBindings1 = {
             icon: 'test.png',
             label: 'joueur',
             description: manifest.description,
-            hint: '[joueur1]',
+            hint: '[joueur1]'+'[joueur2]',
             bindings: [
                 {
-                    location: 'joueur1',
-                    label: 'joueur1',
+                    locationJ1: 'joueur1',
+                    labelJ1: 'joueur1',
+                    locationJ2: 'joueur2',
+                    labelJ2: 'joueur2',
                     form,
                 },
             ],
         },
     ],
-} as AppBinding;
+} as unknown as AppBinding;
 
 // Serve resources from the static folder
 app.use('/static', express.static('./static'));
@@ -158,10 +160,10 @@ app.post('/submit', async (req, res) => {
     const formValues = call.values as FormValues;
     console.log('valeurs formValues:', formValues);
 //Message automatique -- le If permet de mettre un suite contextuelle (genre signature)
-    let message = 'Je suis le bot de Test ==>';
+    let message = 'Saisir le nom du joueur1:';
     const submittedMessage = formValues.message;
     if (submittedMessage) {
-        message += submittedMessage;
+        message += submittedMessage +' joueur2: ';
     }
 
     const users = [
