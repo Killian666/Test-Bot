@@ -121,6 +121,25 @@ const commandBindings1 = {
         },
     ],
 } as AppBinding;
+
+const AppelleDeJoueur = {
+    location: '/command',
+    bindings: [
+        {
+            icon: 'test.png',
+            label: 'essaie',
+            description: manifest.description,
+            hint: '[Joueur1]',
+            bindings: [
+                {
+                    location: 'Joueur1',
+                    label: 'Joueur1',
+                    form,
+                },
+            ],
+        },
+    ],
+} as AppBinding;
 // Serve resources from the static folder
 app.use('/static', express.static('./static'));
 
@@ -136,6 +155,7 @@ app.post('/bindings', (req, res) => {
             channelHeaderBindings,
             commandBindings,
             commandBindings1,
+            AppelleDeJoueur,
         ],
     };
 
