@@ -127,7 +127,7 @@ const AppelleDeJoueur = {
     bindings: [
         {
             icon: 'test.png',
-            label: 'essaie',
+            label: 'Joueur',
             description: manifest.description,
             hint: '[Joueur1]',
             bindings: [
