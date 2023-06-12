@@ -84,7 +84,7 @@ const channelHeaderBindings = {
     ],
 } as AppBinding;
 
-const commandBindings = {
+/*const commandBindings = {
     location: '/command',
     bindings: [
         {
@@ -102,8 +102,8 @@ const commandBindings = {
         },
     ],
 } as AppBinding;
-
-const commandBindings1 = {
+*/
+const commandBindings = {
     location: '/command',
     bindings: [
         {
