@@ -91,7 +91,7 @@ const commandBindings = {
             icon: 'test.png',
             label: 'essaie',
             description: manifest.description,
-            hint: '[Test]',
+            hint: '[essaie]',
             bindings: [
                 {
                     location: 'Test',
