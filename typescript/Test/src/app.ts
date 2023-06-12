@@ -179,8 +179,8 @@ app.post('/submit', async (req, res) => {
     let message = 'Saisir les champs que les joueurs suivants: ';
     const submittedMessage = formValues.message;
     const submittedMessage2 = formValues2.message;
-    if (submittedMessage && submittedMessage2) {
-        'Joueur1: '+submittedMessage+' Joueur2:'+submittedMessage2;
+    if (submittedMessage /*|| submittedMessage2*/) {
+        'Joueur1: '+submittedMessage//+' Joueur2:'+submittedMessage2;
     }
 
     const users = [
