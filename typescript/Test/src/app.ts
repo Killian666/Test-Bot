@@ -105,22 +105,36 @@ const commandBindings = {
 
 const commandBindings1 = {
     location: '/command',
-    bindings: [
+    bindingsJ1: [
         {
             icon: 'test.png',
             label: 'joueur',
             description: manifest.description,
-            hint: '[joueur1]'+'[joueur2]',
+            hint: '[joueur1]' + '[joueur2]',
             bindings: [
                 {
-                    location: 'joueur1'+'joueur2',
-                    label: 'joueur1'+'joueur2',
+                    location: 'joueur1' + 'joueur2',
+                    label: 'joueur1' + 'joueur2',
+                    form,
+                },
+            ],
+        },
+    ], bindingsJ2: [
+        {
+            icon: 'test.png',
+            label: 'joueur',
+            description: manifest.description,
+            hint:'[joueur2]',
+            bindings: [
+                {
+                    location: 'joueur2',
+                    label: 'joueur2',
                     form,
                 },
             ],
         },
     ],
-} as AppBinding;
+} as unknown as AppBinding;
 
 // Serve resources from the static folder
 app.use('/static', express.static('./static'));
