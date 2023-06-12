@@ -128,6 +128,7 @@ app.get('/manifest.json', (req, res) => {
     res.json(manifest);
 });
 
+//Déclaration de function pour les nouvelle commandes
 app.post('/bindings', (req, res) => {
     const callResponse: AppCallResponse<AppBinding[]> = {
         type: 'ok',
@@ -146,6 +147,7 @@ type FormValues = {
 }
 
 app.post('/submit', async (req, res) => {
+    console.log('req:', req);
     const call = req.body as AppCallRequest;
 
     const botClient = new Client4();
@@ -153,11 +155,12 @@ app.post('/submit', async (req, res) => {
     botClient.setToken(call.context.bot_access_token);
 
     const formValues = call.values as FormValues;
+    console.log('valeurs formValues:', formValues);
 //Message automatique -- le If permet de mettre un suite contextuelle (genre signature)
     let message = 'Je suis le bot de Test ==>';
     const submittedMessage = formValues.message;
     if (submittedMessage) {
-        message += ' ...and ' + submittedMessage + '!';
+        message += submittedMessage;
     }
 
     const users = [
