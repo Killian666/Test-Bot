@@ -111,6 +111,7 @@ const commandBindings1 = {
             label: 'joueur',
             description: manifest.description,
             hint: '[joueur1]',
+            hint2:'[joueur2]',
             bindings: [
                 {
                     location: 'joueur1',
