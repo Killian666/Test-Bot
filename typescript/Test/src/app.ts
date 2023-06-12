@@ -110,11 +110,11 @@ const commandBindings1 = {
             icon: 'test.png',
             label: 'joueur1',
             description: manifest.description,
-            hint: '[joueur1]' + '[joueur2]',
+            hint: '[joueur1]',
             bindings: [
                 {
-                    location: 'joueur1' + 'joueur2',
-                    label: 'joueur1' + 'joueur2',
+                    location: 'joueur1',
+                    label: 'joueur1',
                     form,
                 },
             ],
