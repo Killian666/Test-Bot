@@ -145,6 +145,18 @@ app.post('/bindings', (req, res) => {
 
     res.json(callResponse);
 });
+app.post('/bindings', (req, res) => {
+    const callResponse2: AppCallResponse<AppBinding[]> = {
+        type: 'ok',
+        data: [
+            channelHeaderBindings,
+            commandBindings,
+            commandBindings1,
+        ],
+    };
+
+    res.json(callResponse2);
+});
 
 type FormValues = {
     message: string;
