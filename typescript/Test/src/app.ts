@@ -104,7 +104,7 @@ const commandBindings = {
 } as AppBinding;
 
 const commandBindings1 = {
-    location: '/command',
+    locationJ1: '/command',
     bindingsJ1: [
         {
             icon: 'test.png',
@@ -119,7 +119,8 @@ const commandBindings1 = {
                 },
             ],
         },
-    ], bindingsJ2: [
+    ], locationJ2: '/command',
+    bindingsJ2: [
         {
             icon: 'test.png',
             label: 'joueur2',
