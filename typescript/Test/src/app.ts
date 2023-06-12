@@ -113,10 +113,8 @@ const commandBindings1 = {
             hint: '[joueur1]'+'[joueur2]',
             bindings: [
                 {
-                    locationJ1: 'joueur1',
-                    labelJ1: 'joueur1',
-                    locationJ2: 'joueur2',
-                    labelJ2: 'joueur2',
+                    locatio: 'joueur1',
+                    labe: 'joueur1',
                     form,
                 },
             ],
