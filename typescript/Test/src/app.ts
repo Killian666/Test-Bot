@@ -83,7 +83,7 @@ const channelHeaderBindings = {
         },
     ],
 } as AppBinding;
-
+/*
 const commandBindings = {
     location: '/command',
     bindings: [
@@ -121,7 +121,7 @@ const commandBindings1 = {
         },
     ],
 } as AppBinding;
-
+*/
 const AppelleDeJoueur = {
     location: '/command',
     bindings: [
