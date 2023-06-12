@@ -119,22 +119,7 @@ const commandBindings1 = {
                 },
             ],
         },
-    ], locationJ2: '/command',
-    bindingsJ2: [
-        {
-            icon: 'test.png',
-            label: 'joueur2',
-            description: manifest.description,
-            hint:'[joueur2]',
-            bindings: [
-                {
-                    location: 'joueur2',
-                    label: 'joueur2',
-                    form,
-                },
-            ],
-        },
-    ],
+    ], 
 } as unknown as AppBinding;
 
 // Serve resources from the static folder
