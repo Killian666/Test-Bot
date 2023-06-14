@@ -57,15 +57,15 @@ const form: AppForm = {
     icon: '../static/test.png',
     fields: [
         {
-            "name": "Joueur1/Equipe1",
-                "label": "Joueur1/Equipe1:",
+            "name": "Joueur1",
+                "label": "Joueur1:",
                 "type": "user",
                 "description": "(Equipe 1)",
                 "is_required": true,
                 "position": 1
             },
             {
-                "name": "Joueur2/Equipe1",
+                "name": "Joueur2",
                 "label": "Joueur2:",
                 "type": "user",
                 "description": "(Equipe 1)",
@@ -73,15 +73,15 @@ const form: AppForm = {
                 "position": 2
             },
             {
-                "name": "Joueur1/Equipe2",
-                "label": "Joueur1/Equipe2:",
+                "name": "Joueur3",
+                "label": "Joueur1:",
                 "type": "user",
                 "description": "(Equipe 2)",
                 "is_required": true,
                 "position": 3
             },
             {
-                "name": "Joueur2/Equipe2",
+                "name": "Joueur4",
                 "label": "Joueur2:",
                 "type": "user",
                 "description": "(Equipe 2)",
