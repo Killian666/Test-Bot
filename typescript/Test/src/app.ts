@@ -93,6 +93,15 @@ const form: AppForm = {
                 "position": 4
             },
             {
+                "name": "Score/Equipe1",
+                "label": "Score/Equipe1:",
+                "type": "text",
+                "subtype": "number",
+                "is_required": true,
+                "position":5
+                
+            },
+            {
                 "name": "Score/Equipe2",
                 "label": "Score/Equipe2:",
                 "type": "text",
