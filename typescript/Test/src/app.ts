@@ -67,8 +67,7 @@ const form: AppForm = {
             {
                 "name": "Joueur2/Equipe1",
                 "label": "Joueur2/Equipe1:",
-                "type": "text",
-                "subtype": "input",
+                "type": "user",
                 "description": "(Equipe 1)",
                 "is_required": true,
                 "position": 2
@@ -76,8 +75,7 @@ const form: AppForm = {
             {
                 "name": "Joueur1/Equipe2",
                 "label": "Joueur1/Equipe2:",
-                "type": "text",
-                "subtype": "input",
+                "type": "user",
                 "description": "(Equipe 2)",
                 "is_required": true,
                 "position": 3
@@ -85,8 +83,7 @@ const form: AppForm = {
             {
                 "name": "Joueur2/Equipe2",
                 "label": "Joueur2/Equipe2:",
-                "type": "text",
-                "subtype": "input",
+                "type": "user",
                 "description": "(Equipe 2)",
                 "is_required": true,
                 "position": 4
