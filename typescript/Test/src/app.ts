@@ -53,7 +53,7 @@ const manifest = {
 } as AppManifest;
 //l'interface d'envoie de message au utilisateur (appuyer sur le logo a droite dans la barre)
 const form: AppForm = {
-    title: "Je suis le test",
+    title: "Formulaire de saisie de score :)",
     icon: '../static/test.png',
     fields: [
         {
