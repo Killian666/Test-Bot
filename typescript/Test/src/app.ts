@@ -58,7 +58,7 @@ const form: AppForm = {
     fields: [
         {
             "name": "Joueur1/Equipe1",
-                "label": "Joueur1:",
+                "label": "Joueur1/Equipe1",
                 "type": "text",
                 "subtype": "input",
                 "description": "(Equipe 1)",
@@ -67,7 +67,7 @@ const form: AppForm = {
             },
             {
                 "name": "Joueur2/Equipe1",
-                "label": "Joueur2:",
+                "label": "Joueur2/Equipe1",
                 "type": "text",
                 "subtype": "input",
                 "description": "(Equipe 1)",
@@ -76,7 +76,7 @@ const form: AppForm = {
             },
             {
                 "name": "Joueur1/Equipe2",
-                "label": "Joueur1:",
+                "label": "Joueur1/Equipe2",
                 "type": "text",
                 "subtype": "input",
                 "description": "(Equipe 2)",
@@ -85,7 +85,7 @@ const form: AppForm = {
             },
             {
                 "name": "Joueur2/Equipe2",
-                "label": "Joueur2:",
+                "label": "Joueur2/Equipe2",
                 "type": "text",
                 "subtype": "input",
                 "description": "(Equipe 2)",
