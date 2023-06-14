@@ -104,8 +104,8 @@ const commandBindings = {
 } as AppBinding;
 
 const commandBindings1 = {
-    locationJ1: '/command',
-    bindingsJ1: [
+    location: '/command',
+    bindings: [
         {
             icon: 'test.png',
             label: 'joueur1',
@@ -113,14 +113,21 @@ const commandBindings1 = {
             hint: '[joueur1]',
             bindings: [
                 {
+                    hint: 'joueur1',
                     location: 'joueur1',
                     label: 'joueur1',
+                    form,
+                },
+                {
+                    hint: 'joueur2',
+                    location: 'joueur2',
+                    label: 'joueur2',
                     form,
                 },
             ],
         },
     ], 
-} as unknown as AppBinding;
+} as AppBinding;
 
 // Serve resources from the static folder
 app.use('/static', express.static('./static'));
