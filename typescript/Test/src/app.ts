@@ -51,7 +51,7 @@ const manifest = {
         '/command',
     ],
 } as AppManifest;
-//l'interface d'envoie de message au utilisateur (appuyer sur le logo a droite dans la barre)
+//Formulaire de saisie de score 
 const form: AppForm = {
     title: "Formulaire de saisie de score :)",
     icon: '../static/test.png',
@@ -81,7 +81,7 @@ const form: AppForm = {
                 "position": 3
             },
             {
-                "name": "Joueur2/Equipe2",
+                "name": "Joueur2",
                 "label": "Joueur2/Equipe2:",
                 "type": "user",
                 "description": "(Equipe 2)",
