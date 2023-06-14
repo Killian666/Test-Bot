@@ -94,7 +94,7 @@ const form: AppForm = {
             },
             {
                 "name": "Score/Equipe2",
-                "label": "Joueur2/Equipe2:",
+                "label": "Score/Equipe2:",
                 "type": "text",
                 "subtype": "number",
                 "is_required": true,
