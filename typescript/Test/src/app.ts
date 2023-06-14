@@ -57,29 +57,36 @@ const form: AppForm = {
     icon: '../static/test.png',
     fields: [
         {
-            "name": "eventname",
-                "label": "eventname",
+            "name": "Equipe 1 --> Joueur 1 :",
+                "label": "Equipe 1 --> Joueur 1 :",
                 "type": "text",
                 "subtype": "input",
-                "description": "The name of the event to subscribe to",
-                "is_required": true,
+                "description": "Le Nom et le prénom",
                 "position": 1
             },
             {
-                "name": "teamid",
-                "label": "teamid",
+                "name": "Equipe 1 --> Joueur 2 :",
+                "label": "Equipe 1 --> Joueur 2 :",
                 "type": "text",
                 "subtype": "input",
-                "description": "The ID of the team",
+                "description": "Le Nom et le prénom",
                 "position": 2
             },
             {
-                "name": "channelid",
-                "label": "channelid",
+                "name": "Equipe 2 --> Joueur 1 :",
+                "label": "Equipe 2 --> Joueur 1 :",
                 "type": "text",
                 "subtype": "input",
-                "description": "The ID of the channel",
+                "description": "Le Nom et le prénom",
                 "position": 3
+            },
+            {
+                "name": "Equipe 2 --> Joueur 2 :",
+                "label": "Equipe 2 --> Joueur 2 :",
+                "type": "text",
+                "subtype": "input",
+                "description": "Le Nom et le prénom",
+                "position": 4
             }
         ],
         "submit": {
