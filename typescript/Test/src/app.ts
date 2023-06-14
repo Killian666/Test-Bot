@@ -57,7 +57,7 @@ const form: AppForm = {
     icon: '../static/test.png',
     fields: [
         {
-            "name": "Joueur1",
+            "name": "Joueur1/Equipe1",
                 "label": "Joueur1:",
                 "type": "text",
                 "subtype": "input",
@@ -66,7 +66,7 @@ const form: AppForm = {
                 "position": 1
             },
             {
-                "name": "Joueur2",
+                "name": "Joueur2/Equipe1",
                 "label": "Joueur2:",
                 "type": "text",
                 "subtype": "input",
@@ -75,7 +75,7 @@ const form: AppForm = {
                 "position": 2
             },
             {
-                "name": "Joueur1",
+                "name": "Joueur1/Equipe2",
                 "label": "Joueur1:",
                 "type": "text",
                 "subtype": "input",
@@ -84,7 +84,7 @@ const form: AppForm = {
                 "position": 3
             },
             {
-                "name": "Joueur2",
+                "name": "Joueur2/Equipe2",
                 "label": "Joueur2:",
                 "type": "text",
                 "subtype": "input",
