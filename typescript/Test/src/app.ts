@@ -72,7 +72,7 @@ const form: AppForm = {
                 "description": "Le Nom et le prénom",
                 "position": 2
             },
-            {
+            /*{
                 "name": "Equipe 2 --> Joueur 1 :",
                 "label": "Equipe 2 --> Joueur 1 :",
                 "type": "text",
@@ -87,7 +87,7 @@ const form: AppForm = {
                 "subtype": "input",
                 "description": "Le Nom et le prénom",
                 "position": 4
-            }
+            }*/
         ],
         "submit": {
             "path": "/sub"
