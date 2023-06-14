@@ -54,22 +54,50 @@ const manifest = {
 //l'interface d'envoie de message au utilisateur (appuyer sur le logo a droite dans la barre)
 const form: AppForm = {
     title: "Je suis le test",
-    icon: 'test.png',
+    icon: '../static/test.png',
     fields: [
-        {
-            type: 'text',
-            name: 'message',
-            label: 'message',
-            position: 1,
-        },
-    ],
-    submit: {
-        path: '/submit',
-        expand: {
-            acting_user: "all",
-            acting_user_access_token: "all"
-        }
-    },
+            {
+                "location": "sub",
+                "label": "sub",
+                "description": "Subscribe to an event",
+                "form": {
+                    "title": "Subscribe to an event",
+                    "header": "Subscribe to a Mattermost Server event",
+                    "icon": "icon.png",
+                    "fields": [
+                        {
+                            "name": "eventname",
+                            "label": "eventname",
+                            "type": "text",
+                            "subtype": "input",
+                            "description": "The name of the event to subscribe to",
+                            "is_required": true,
+                            "position": 1
+                        },
+                        {
+                            "name": "teamid",
+                            "label": "teamid",
+                            "type": "text",
+                            "subtype": "input",
+                            "description": "The ID of the team",
+                            "position": 2
+                        },
+                        {
+                            "name": "channelid",
+                            "label": "channelid",
+                            "type": "text",
+                            "subtype": "input",
+                            "description": "The ID of the channel",
+                            "position": 3
+                        }
+                    ],
+                    "submit": {
+                        "path": "/sub"
+                    },
+                },
+            },
+
+            ],
 };
 
 const channelHeaderBindings = {
@@ -155,7 +183,6 @@ type FormValues = {
 }
 
 app.post('/submit', async (req, res) => {
-    console.log('req:', req);
     const call = req.body as AppCallRequest;
 
     const botClient = new Client4();
@@ -163,7 +190,6 @@ app.post('/submit', async (req, res) => {
     botClient.setToken(call.context.bot_access_token);
 
     const formValues = call.values as FormValues;
-    console.log('valeurs formValues:', formValues);
 //Message automatique -- le If permet de mettre un suite contextuelle (genre signature)
     let message = 'Saisir le nom du joueur1:';
     const submittedMessage = formValues.message;
