@@ -59,8 +59,7 @@ const form: AppForm = {
         {
             "name": "Joueur1/Equipe1",
                 "label": "Joueur1/Equipe1:",
-                "type": "text",
-                "subtype": "input",
+                "type": "user",
                 "description": "(Equipe 1)",
                 "is_required": true,
                 "position": 1
