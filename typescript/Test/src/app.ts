@@ -51,37 +51,40 @@ const manifest = {
         '/command',
     ],
 } as AppManifest;
-//Formulaire de saisie de score 
+//Formulaire de saisie de score
 const form: AppForm = {
     title: "Formulaire de saisie de score :)",
     icon: '../static/test.png',
     fields: [
         {
             "name": "Joueur1/Equipe1",
-                "label": "Joueur1(Equipe1):",
+                "label": "Joueur1/Equipe1:",
                 "type": "user",
+                "description": "(Equipe 1)",
                 "is_required": true,
                 "position": 1
             },
             {
                 "name": "Joueur2/Equipe1",
-                "label": "Joueur2(Equipe1):",
+                "label": "Joueur2/Equipe1:",
                 "type": "user",
+                "description": "(Equipe 1)",
                 "is_required": true,
                 "position": 2
             },
             {
-                "name": "Joueur1/Equipe 2",
-                "label": "Joueur1(Equipe 2):",
+                "name": "Joueur1/Equipe2",
+                "label": "Joueur1/Equipe2:",
                 "type": "user",
-
+                "description": "(Equipe 2)",
                 "is_required": true,
                 "position": 3
             },
             {
-                "name": "Joueur2/Equipe 2)",
-                "label": "Joueur2(Equipe 2):",
+                "name": "Joueur2/Equipe2",
+                "label": "Joueur2/Equipe2:",
                 "type": "user",
+                "description": "(Equipe 2)",
                 "is_required": true,
                 "position": 4
             },
@@ -105,7 +108,7 @@ const form: AppForm = {
             }
         ],
         "submit": {
-            "path": "/submit"
+            "path": "/sub"
         },
     };
 
