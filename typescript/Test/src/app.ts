@@ -103,8 +103,8 @@ const form: AppForm = {
                 
             }
         ],
-        "submit": {
-            "path": "/sub"
+        submit: {
+            path: '/submit',
         },
     };
 
