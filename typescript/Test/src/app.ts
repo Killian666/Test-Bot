@@ -57,7 +57,7 @@ const form: AppForm = {
     icon: '../static/test.png',
     fields: [
         {
-            "name": "Joueur 1",
+            "name": "Joueur1",
                 "label": "J1",
                 "type": "text",
                 "subtype": "input",
