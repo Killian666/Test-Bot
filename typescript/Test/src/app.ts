@@ -58,7 +58,7 @@ const form: AppForm = {
     fields: [
         {
             "name": "Joueur1",
-                "label": "J1",
+                "label": "Joueur 1",
                 "type": "text",
                 "subtype": "input",
                 "description": "The name of the event to subscribe to",
