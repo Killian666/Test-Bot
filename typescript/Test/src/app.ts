@@ -56,49 +56,37 @@ const form: AppForm = {
     title: "Je suis le test",
     icon: '../static/test.png',
     fields: [
-            {
-                "location": "sub",
-                "label": "sub",
-                "description": "Subscribe to an event",
-                "form": {
-                    "title": "Subscribe to an event",
-                    "header": "Subscribe to a Mattermost Server event",
-                    "icon": "icon.png",
-                    "fields": [
-                        {
-                            "name": "eventname",
-                            "label": "eventname",
-                            "type": "text",
-                            "subtype": "input",
-                            "description": "The name of the event to subscribe to",
-                            "is_required": true,
-                            "position": 1
-                        },
-                        {
-                            "name": "teamid",
-                            "label": "teamid",
-                            "type": "text",
-                            "subtype": "input",
-                            "description": "The ID of the team",
-                            "position": 2
-                        },
-                        {
-                            "name": "channelid",
-                            "label": "channelid",
-                            "type": "text",
-                            "subtype": "input",
-                            "description": "The ID of the channel",
-                            "position": 3
-                        }
-                    ],
-                    "submit": {
-                        "path": "/sub"
-                    },
-                },
+        {
+            "name": "eventname",
+                "label": "eventname",
+                "type": "text",
+                "subtype": "input",
+                "description": "The name of the event to subscribe to",
+                "is_required": true,
+                "position": 1
             },
+            {
+                "name": "teamid",
+                "label": "teamid",
+                "type": "text",
+                "subtype": "input",
+                "description": "The ID of the team",
+                "position": 2
+            },
+            {
+                "name": "channelid",
+                "label": "channelid",
+                "type": "text",
+                "subtype": "input",
+                "description": "The ID of the channel",
+                "position": 3
+            }
+        ],
+        "submit": {
+            "path": "/sub"
+        },
+    };
 
-            ],
-};
 
 const channelHeaderBindings = {
     location: '/channel_header',
