@@ -109,8 +109,8 @@ const form: AppForm = {
                 acting_user: "all",
                 acting_user_access_token: "all"
             }
-        },
-    };
+         },
+   };
 
 const channelHeaderBindings = {
     location: '/channel_header',
