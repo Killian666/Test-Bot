@@ -145,18 +145,18 @@ const commandBindings1 = {
     bindings: [
         {
             icon: 'test.png',
-            label: 'formulaire',
+            label: 'form',
             description: manifest.description,
-            hint: '[Formulaire de saisie de score et nom de joueur]',
+            hint: '[Formulaire]',
             bindings: [
                 {
-                    hint: 'Saisie des noms de joueur',
-                    location: 'Saisie des noms de joueur',
+                    location: 'Saisie de joueur',
+                    label: 'Saisie de joueur',
                     form,
-                }
+                },
             ],
         },
-    ], 
+    ],
 } as AppBinding;
 
 // Serve resources from the static folder
