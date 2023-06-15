@@ -99,7 +99,7 @@ const form: AppForm = {
                 "type": "text",
                 "subtype": "number",
                 "is_required": true,
-                "position":5
+                "position":6
                 
             }
         ],
@@ -200,10 +200,10 @@ app.post('/submit', async (req, res) => {
 
     const formValues = call.values as FormValues;
 //Message automatique -- le If permet de mettre un suite contextuelle (genre signature)
-    let message = 'Saisir le nom du joueur1:';
+    let message = 'Le formulaire:';
     const submittedMessage = formValues.message;
     if (submittedMessage) {
-        message += submittedMessage +' joueur2:';
+        message += submittedMessage ;
     }
 
     const users = [
