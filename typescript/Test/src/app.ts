@@ -150,8 +150,8 @@ const commandBindings1 = {
             hint: '[Formulaire]',
             bindings: [
                 {
-                    location: 'Saisie de joueur',
-                    label: 'Saisie de joueur',
+                    location: 'Saisie-de-joueur',
+                    label: 'Saisie-de-joueur',
                     form,
                 },
             ],
