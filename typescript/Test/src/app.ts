@@ -101,13 +101,16 @@ const form: AppForm = {
                 "is_required": true,
                 "position":6
                 
-            }
+            },
         ],
         submit: {
             path: '/submit',
+            expand: {
+                acting_user: "all",
+                acting_user_access_token: "all"
+            }
         },
     };
-
 
 const channelHeaderBindings = {
     location: '/channel_header',
