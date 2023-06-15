@@ -145,22 +145,15 @@ const commandBindings1 = {
     bindings: [
         {
             icon: 'test.png',
-            label: 'joueur1',
+            label: 'formulaire',
             description: manifest.description,
-            hint: '[joueur1]',
+            hint: '[Formulaire de saisie de score et nom de joueur]',
             bindings: [
                 {
-                    hint: 'joueur1',
-                    location: 'joueur1',
-                    label: 'joueur1',
+                    hint: 'Saisie des noms de joueur',
+                    location: 'Saisie des noms de joueur',
                     form,
-                },
-                {
-                    hint: 'joueur2',
-                    location: 'joueur2',
-                    label: 'joueur2',
-                    form,
-                },
+                }
             ],
         },
     ], 
