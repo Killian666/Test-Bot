@@ -198,6 +198,7 @@ app.post('/submit', async (req, res) => {
 //Message automatique -- le If permet de mettre un suite contextuelle (genre signature)
     let message = 'Le formulaire:';
     const submittedMessage = formValues.message;
+    console.log;(submittedMessage) 
     if (submittedMessage) {
         message += submittedMessage ;
     }
