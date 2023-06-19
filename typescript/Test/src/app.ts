@@ -194,12 +194,12 @@ app.post('/submit', async (req, res) => {
     botClient.setUrl(call.context.mattermost_site_url);
     botClient.setToken(call.context.bot_access_token);
     
-    const formValues = call.values as FormValues[];
+    const formValues = call.values as FormValues;
 //Message automatique -- le If permet de mettre un suite contextuelle (genre signature)
-    let txt = 'Le formulaire:';
-    const submittedMessage = formValues[0].message;
+    let message = 'Le formulaire:';
+    const submittedMessage = formValues.message;
     if (submittedMessage) {
-        txt += submittedMessage ;
+        message += submittedMessage ;
     }
 
     const users = [
