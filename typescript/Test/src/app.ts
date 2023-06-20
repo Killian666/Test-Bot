@@ -199,7 +199,7 @@ app.post('/submit', async (req, res) => {
     let message = 'Le formulaire:';
     const submittedMessage = formValues.message;
     if (submittedMessage) {
-        message += submittedMessage ;
+        message += submittedMessage + "Je suis le deuxième message" ;
     }
 
     const users = [
