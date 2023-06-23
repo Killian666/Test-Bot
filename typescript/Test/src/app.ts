@@ -198,8 +198,10 @@ app.post('/submit', async (req, res) => {
 //Message automatique -- le If permet de mettre un suite contextuelle (genre signature)
     let message = 'Le formulaire:';
     const submittedMessage = formValues.message;
+    var str = submittedMessage; 
+    var splitted = str.split(" ", 5); 
     if (submittedMessage) {
-        message + submittedMessage + "Je suis le deuxième message" ;
+        message + "Joueur 1:" + splitted[0] + "Joueur 2:" + splitted[1];
     }
 
     const users = [
@@ -244,3 +246,4 @@ app.post('/submit', async (req, res) => {
 app.listen(port, () => {
     console.log(`app listening on port ${port}`);
 });
+
