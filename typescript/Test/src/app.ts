@@ -200,9 +200,8 @@ app.post('/submit', async (req, res) => {
     const submittedMessage = formValues.message;
     var str = submittedMessage; 
     var splitted = str.split(" ", 3); 
-    if (submittedMessage) {
-        message + splitted[1] + "Je suis le deuxième message" ;
-    }
+    
+    message + splitted[1] + "Je suis le deuxième message" ;
 
     const users = [
         call.context.bot_user_id,
