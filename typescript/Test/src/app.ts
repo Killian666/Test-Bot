@@ -201,7 +201,7 @@ app.post('/submit', async (req, res) => {
     var str = submittedMessage; 
     var splitted = str.split(" ", 3); 
     if (submittedMessage) {
-        message + submittedMessage + "Je suis le deuxième message" ;
+        message + splitted[1] + "Je suis le deuxième message" ;
     }
 
     const users = [
