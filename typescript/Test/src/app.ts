@@ -199,9 +199,9 @@ app.post('/submit', async (req, res) => {
     let message = 'Le formulaire:';
     const submittedMessage = formValues.message;
     var str = submittedMessage; 
-    var splitted = str.split(" ", 5); 
+    var splitted = str.split(" ", 3); 
     if (submittedMessage) {
-        message + "Joueur 1:" + splitted[0] + "Joueur 2:" + splitted[1];
+        message + submittedMessage + "Je suis le deuxième message" ;
     }
 
     const users = [
