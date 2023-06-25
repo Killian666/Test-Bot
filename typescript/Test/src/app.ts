@@ -57,60 +57,60 @@ const form: AppForm = {
     icon: '../static/test.png',
     fields: [
         {
-            "name": "Joueur1/Equipe1",
-                "label": "Joueur1/Equipe1:",
-                "type": "user",
-                "is_required": true,
-                "position": 1
-            },
-            {
-                "name": "Joueur2/Equipe1",
-                "label": "Joueur2/Equipe1:",
-                "type": "user",
-                "is_required": true,
-                "position": 2
-            },
-            {
-                "name": "Joueur1/Equipe2",
-                "label": "Joueur1/Equipe2:",
-                "type": "user",
-                "is_required": true,
-                "position": 3
-            },
-            {
-                "name": "Joueur2/Equipe2",
-                "label": "Joueur2/Equipe2:",
-                "type": "user",
-                "is_required": true,
-                "position": 4
-            },
-            {
-                "name": "Score/Equipe1",
-                "label": "Score/Equipe1:",
-                "type": "text",
-                "subtype": "number",
-                "is_required": true,
-                "position":5
-                
-            },
-            {
-                "name": "Score/Equipe2",
-                "label": "Score/Equipe2:",
-                "type": "text",
-                "subtype": "number",
-                "is_required": true,
-                "position":6
-                
-            },
-        ],
-        submit: {
-            path: '/submit',
-            expand: {
-                acting_user: "all",
-                acting_user_access_token: "all"
-            }
-         },
-   };
+            "name": "J1E1",
+            "label": "Joueur1/Equipe1:",
+            "type": "user",
+            "is_required": true,
+            "position": 1
+        },
+        {
+            "name": "J2E1",
+            "label": "Joueur2/Equipe1:",
+            "type": "user",
+            "is_required": true,
+            "position": 2
+        },
+        {
+            "name": "J1E2",
+            "label": "Joueur1/Equipe2:",
+            "type": "user",
+            "is_required": true,
+            "position": 3
+        },
+        {
+            "name": "J2E2",
+            "label": "Joueur2/Equipe2:",
+            "type": "user",
+            "is_required": true,
+            "position": 4
+        },
+        {
+            "name": "SE1",
+            "label": "Score/Equipe1:",
+            "type": "text",
+            "subtype": "number",
+            "is_required": true,
+            "position":5
+            
+        },
+        {
+            "name": "SE2",
+            "label": "Score/Equipe2:",
+            "type": "text",
+            "subtype": "number",
+            "is_required": true,
+            "position":6
+            
+        },
+    ],
+    submit: {
+        path: '/submit',
+        expand: {
+            acting_user: "all",
+            acting_user_access_token: "all"
+        }
+    },
+};
 
 const channelHeaderBindings = {
     location: '/channel_header',
@@ -183,8 +183,26 @@ app.post('/bindings', (req, res) => {
     res.json(callResponse);
 });
 
+type User = {
+    label: string;
+    value: string;
+}
 type FormValues = {
-    message: string;
+    J1E1: User;
+    J2E1: User;
+    J1E2: User;
+    J2E2: User;
+    SE1: number;
+    SE2: number;
+}
+
+function isWinner(score1: number, score2: number): string {
+    if (score1 > score2)
+        return '🏆'
+    else if (score2 > score1)
+        return '🤬'
+    else
+        return '🐐'
 }
 
 app.post('/submit', async (req, res) => {
@@ -195,13 +213,13 @@ app.post('/submit', async (req, res) => {
     botClient.setToken(call.context.bot_access_token);
     
     const formValues = call.values as FormValues;
-//Message automatique -- le If permet de mettre un suite contextuelle (genre signature)
-    let message = 'Le formulaire:';
-    const submittedMessage = formValues.message;
-    var str = submittedMessage; 
-    var splitted = str.split(" ", 3); 
-    
-    message + splitted[1] + "Je suis le deuxième message" ;
+    // Message automatique -- le If permet de mettre un suite contextuelle (genre signature)
+    let message = "Score de l'équipe : " + formValues.SE1 + ' ' + isWinner(formValues.SE1, formValues.SE2) + ' à ' + formValues.SE2 + ' ' + isWinner(formValues.SE2, formValues.SE1);
+
+//     message = `|Joueur|dvd|
+// |---|--|
+// |Joueur|dvd|
+// |Joueur|dvd|`
 
     const users = [
         call.context.bot_user_id,
