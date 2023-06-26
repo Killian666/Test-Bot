@@ -11,6 +11,7 @@ import {Post} from '@mattermost/types/lib/posts';
 import {Channel} from '@mattermost/types/lib/channels';
 
 import {Client4} from '@mattermost/client';
+import { type } from 'os';
 
 const host = process.env.APP_HOST || 'localhost';
 const port = process.env.APP_PORT || 5000;
@@ -59,7 +60,7 @@ const form: AppForm = {
         {
             "name": "J1E1",
             "label": "Joueur1/Equipe1:",
-            "type": "user",
+            "type": "text",
             "is_required": true,
             "position": 1
         },
@@ -67,13 +68,12 @@ const form: AppForm = {
             "name": "J2E1",
             "label": "Joueur2/Equipe1:",
             "type": "user",
-            "is_required": true,
             "position": 2
         },
         {
             "name": "J1E2",
             "label": "Joueur1/Equipe2:",
-            "type": "user",
+            "type": "user",  
             "is_required": true,
             "position": 3
         },
@@ -81,7 +81,6 @@ const form: AppForm = {
             "name": "J2E2",
             "label": "Joueur2/Equipe2:",
             "type": "user",
-            "is_required": true,
             "position": 4
         },
         {
@@ -185,7 +184,9 @@ app.post('/bindings', (req, res) => {
 
 type User = {
     label: string;
+    type : string;
     value: string;
+    name:string
 }
 type FormValues = {
     J1E1: User;
@@ -198,11 +199,11 @@ type FormValues = {
 
 function isWinner(score1: number, score2: number): string {
     if (score1 > score2)
-        return '🏆'
+        return 'Victoire de l équipe 1🏆'
     else if (score2 > score1)
-        return '🤬'
+        return 'Victoire de l équipe 2🏆'
     else
-        return '🐐'
+        return 'égalité 🐐'
 }
 
 app.post('/submit', async (req, res) => {
@@ -214,8 +215,8 @@ app.post('/submit', async (req, res) => {
     
     const formValues = call.values as FormValues;
     // Message automatique -- le If permet de mettre un suite contextuelle (genre signature)
-    let message = "Score de l'équipe : " + formValues.SE1 + ' ' + isWinner(formValues.SE1, formValues.SE2) + ' à ' + formValues.SE2 + ' ' + isWinner(formValues.SE2, formValues.SE1);
-
+    let message = "L'équipe 1:" + formValues.J1E1 + ' & ' + formValues.J2E1 + ' avec un score de :' + formValues.SE1 + '😁' + "<--> l'équipe 2:" + formValues.J2E1 + ' & ' + formValues.J2E2 + ' avec un score de :' + formValues.SE2 + '🙃'+ '  Le score final est :  ' + isWinner(formValues.SE1, formValues.SE2);
+    console.log(message)
 //     message = `|Joueur|dvd|
 // |---|--|
 // |Joueur|dvd|
