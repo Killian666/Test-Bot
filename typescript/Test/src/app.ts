@@ -60,7 +60,7 @@ const form: AppForm = {
         {
             "name": "J1E1",
             "label": "Joueur1/Equipe1:",
-            "type": "text",
+            "type": "user", // "text" permet de saisir un nom direct et fonctionne avec le code actuelle mais n'est pas dinamique 
             "is_required": true,
             "position": 1
         },
@@ -142,7 +142,26 @@ const commandBindings = {
     ],
 } as AppBinding;
 
-const commandBindings1 = {
+const FormulaireTest1 = {
+    location: '/command',
+    bindings: [
+        {
+            icon: 'test.png',
+            label: 'form',
+            description: manifest.description,
+            hint: '[Formulaire]',
+            bindings: [
+                {
+                    location: 'Saisie-de-joueur',
+                    label: 'Saisie-de-joueur',
+                    form,
+                },
+            ],
+        },
+    ],
+} as AppBinding;
+
+const FormulaireDeScore = {
     location: '/command',
     bindings: [
         {
@@ -175,7 +194,8 @@ app.post('/bindings', (req, res) => {
         data: [
             channelHeaderBindings,
             commandBindings,
-            commandBindings1,
+            FormulaireTest1,
+            FormulaireDeScore,
         ],
     };
 
@@ -214,13 +234,19 @@ app.post('/submit', async (req, res) => {
     botClient.setToken(call.context.bot_access_token);
     
     const formValues = call.values as FormValues;
-    // Message automatique -- le If permet de mettre un suite contextuelle (genre signature)
-    let message = "L'équipe 1:" + formValues.J1E1 + ' & ' + formValues.J2E1 + ' avec un score de :' + formValues.SE1 + '😁' + "<--> l'équipe 2:" + formValues.J2E1 + ' & ' + formValues.J2E2 + ' avec un score de :' + formValues.SE2 + '🙃'+ '  Le score final est :  ' + isWinner(formValues.SE1, formValues.SE2);
+    //Affichage du tableau
+    let message = `| Equipe & Joueur | Score |
+    |---|--|
+    |${formValues.J1E1.label} , ${formValues.J2E1.label}|${formValues.SE1}|
+    |${formValues.J1E2.label} , ${formValues.J2E2.label}|${formValues.SE2}|
+    |${isWinner(formValues.SE1, formValues.SE2)}|`;
+    
     console.log(message)
-//     message = `|Joueur|dvd|
-// |---|--|
-// |Joueur|dvd|
-// |Joueur|dvd|`
+    
+    //message = `| Equipe & Joueur | Score |
+     //|---|--|
+     //|${formValues.J1E1.label} , ${formValues.J2E1.label}|${formValues.SE1}|
+     //|${formValues.J1E2.label} , ${formValues.J2E2.label}|${formValues.SE2}|`
 
     const users = [
         call.context.bot_user_id,
