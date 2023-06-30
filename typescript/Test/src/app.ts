@@ -111,6 +111,7 @@ const form: AppForm = {
     },
 };
 
+
 const channelHeaderBindings = {
     location: '/channel_header',
     bindings: [
@@ -161,25 +162,6 @@ const FormulaireTest1 = {
     ],
 } as AppBinding;
 
-const FormulaireDeScore = {
-    location: '/command',
-    bindings: [
-        {
-            icon: 'test.png',
-            label: 'form',
-            description: manifest.description,
-            hint: '[Formulaire]',
-            bindings: [
-                {
-                    location: 'Saisie-de-joueur',
-                    label: 'Saisie-de-joueur',
-                    form,
-                },
-            ],
-        },
-    ],
-} as AppBinding;
-
 // Serve resources from the static folder
 app.use('/static', express.static('./static'));
 
@@ -195,7 +177,6 @@ app.post('/bindings', (req, res) => {
             channelHeaderBindings,
             commandBindings,
             FormulaireTest1,
-            FormulaireDeScore,
         ],
     };
 
@@ -242,11 +223,6 @@ app.post('/submit', async (req, res) => {
     |${isWinner(formValues.SE1, formValues.SE2)}|`;
     
     console.log(message)
-    
-    //message = `| Equipe & Joueur | Score |
-     //|---|--|
-     //|${formValues.J1E1.label} , ${formValues.J2E1.label}|${formValues.SE1}|
-     //|${formValues.J1E2.label} , ${formValues.J2E2.label}|${formValues.SE2}|`
 
     const users = [
         call.context.bot_user_id,
