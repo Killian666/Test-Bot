@@ -7,6 +7,6 @@
 2) Install the Bot by typing the following command in a channel: /apps install http http://mattermost-apps-typescript-Test:5000/manifest.json
 3) The available commands are:
 #
-| Commande | Utilitée |
+| Command | Useful |
 |----------|---------------------------------------------------------------------------------------------------|
-| /form    | Fait un formulaire de saisie de joueur et de score qui vas permètre de faire un tableau de score  |
+| /form    | Make a player and score entry form that will allow you to make a scoreboard  |
