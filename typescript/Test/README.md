@@ -1,5 +1,13 @@
 # Bot Test (explication français)
 
+## Contexte
+
+Il s'agit d'un dépot contenant le bot Hello Word, Test.
+Hello World est le bot qui sert d'exemple pour la doc Mattermost
+
+Le "Test" est le bot crée et qui as les fonctionnalités listée dans le tableau que vous verrez en lisant :)
+
+
 ## L'installation
 
 1) Cloner le dépot GitHub en suivant le lien suivant: https://github.com/Killian666/Test-Bot 
