@@ -11,7 +11,7 @@ services:
       - "5000:5000"
     environment:
       MATTERMOST_SITEURL: "http://mattermost:8065"
-      APP_HOST: "mattermost-apps-typescript-Test" # Same as the service's network name
+      APP_HOST: "mattermost-apps-typescript-Test" # Commande pour installer le Bot : /apps install http http://mattermost-apps-typescript-Test:5000/manifest.json
       APP_PORT: 5000
     volumes:
       - "./:/app"
